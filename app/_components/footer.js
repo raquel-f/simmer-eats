@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { Typography } from "../utils/typography";
+
+// utils
+import { Typography } from "../_utils/typography";
+
+// components
 import Branding from "./branding";
 
 export default function Footer() {

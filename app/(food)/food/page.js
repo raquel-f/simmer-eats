@@ -1,3 +1,4 @@
+// API
 import {
     getBudgetFood,
     getBusinesses,
@@ -8,10 +9,12 @@ import {
     getPremiumFood,
     getSingleServingFood,
     getVegetarianFood
-} from "@/app/api";
-import CategoryFilter from "../categoryFilter";
-import FoodItem from "../foodItem";
-import Restaurant from "../restaurant";
+} from "@/app/_api";
+
+// components
+import CategoryFilter from "./_components/categoryFilter";
+import FoodItem from "./_components/foodItem";
+import Restaurant from "./_components/restaurant";
 
 const categories = [
     { name: 'Premium', icon: '/categories/premium.png' },

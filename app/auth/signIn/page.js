@@ -6,10 +6,10 @@ import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
 
-// utils
-import { loginUser } from "@/app/api";
-import { setAuthCookie } from "@/app/api/cookies";
-import { Typography } from "@/app/utils/typography";
+// API & utils
+import { loginUser } from "@/app/_api";
+import { setAuthCookie } from "@/app/_api/cookies";
+import { Typography } from "@/app/_utils/typography";
 
 // authenticate user
 async function login(event, errorH, router) {
@@ -45,7 +45,8 @@ async function login(event, errorH, router) {
     } catch (e) {
         // show error to user
         console.log(e);
-        errorH(e.response.data.message);
+        if (e.response && e.response.data && e.response.data.message) errorH(e.response.data.message);
+        else errorH('An error occured. Please try again later.');
     }
 }
 

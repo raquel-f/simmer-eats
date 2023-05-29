@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { getFoodItem, getImage } from "../api";
-import { Typography } from "../utils/typography";
 import Image from "next/image";
+
+// API & utils
+import { getFoodItem, getImage } from "@/app/_api";
+import { Typography } from "@/app/_utils/typography";
 
 // default image (transparent 100x100)
 const blankImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAQAAADa613fAAAAaElEQVR42u3PQREAAAwCoNm/9CL496ABuREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREWkezG8AZQ6nfncAAAAASUVORK5CYII=';

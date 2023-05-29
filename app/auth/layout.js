@@ -1,4 +1,4 @@
-import Branding from "../components/branding";
+import Branding from "../_components/branding";
 
 export default function AuthLayout({ children }) {
     return (

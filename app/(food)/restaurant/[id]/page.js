@@ -1,9 +1,12 @@
-import { getFood, getImage, getRestaurantFood } from "@/app/api";
-import { getBusiness } from "@/app/api";
-import { Typography } from "@/app/utils/typography";
 import Image from "next/image";
 import Link from "next/link";
-import FoodItem from "../../foodItem";
+
+// API & utils
+import { getImage, getRestaurantFood, getBusiness } from "@/app/_api";
+import { Typography } from "@/app/_utils/typography";
+
+// components
+import FoodItem from "../../food/_components/foodItem";
 
 export default async function RestaurantID({ params }) {
 
@@ -65,7 +68,7 @@ export default async function RestaurantID({ params }) {
 
                 {/* Restaurant Food */}
                 <div className="flex mt-4 py-2 h-fit w-full md:ml-8 md:w-2/3">
-                    
+
                     {/* Food Items */}
                     <div className="pb-8 px-6 pr-4 w-screen grid items-center justify-center gap-4 grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-rows-auto">
                         {resFood.map((food, index) => {

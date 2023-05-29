@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Typography } from "../utils/typography";
+
+// utils
+import { Typography } from "@/app/_utils/typography";
 
 export default function Category({ icon, name, updateCategory, activeCatName }) {
 

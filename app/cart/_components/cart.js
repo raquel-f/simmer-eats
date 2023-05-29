@@ -2,9 +2,16 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { getLoggedCart, removeFromLoggedCart } from "../api";
-import { getAuthCookie } from "../api/cookies";
+
+// API & utils
+import { getLoggedCart, removeFromLoggedCart } from "@/app/_api";
+import { getAuthCookie } from "@/app/_api/cookies";
+import { Typography } from "@/app/_utils/typography";
+
+// components
 import CartItem from "./cartItem";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Cart() {
 
@@ -42,12 +49,23 @@ export default function Cart() {
 
 
     return (
-        /* container for cart items */
-        <div className="grid grid-cols-1 gap-y-4 mb-6">
-            {cart.products.map((prod) => {
-                return <CartItem key={prod._id} {...prod} deleteItem={deleteItem} />
-            })}
-        </div>
+        <>
+            {/* container for cart items */}
+            <div className="grid grid-cols-1 gap-y-4 mb-6">
+                {cart.products.map((prod) => {
+                    return <CartItem key={prod._id} {...prod} deleteItem={deleteItem} />
+                })}
+            </div>
+
+            {/* Empty state */}
+            {cart.products.length === 0 &&
+                <div className="flex flex-col items-center justify-center p-8">
+                    <Image src={'/android-chrome-512x512.png'} height={200} width={200} alt='plumbob' className="mb-4"></Image>
+                    <Typography variant={'h4'}>Shopping cart is empty.</Typography>
+                    <Typography variant={'h4'} className={'mb-6'}>Try finding some delicious food <Link href={'/food'} className="font-semibold">here</Link>. </Typography>
+                </div>
+            }
+        </>
     );
 
 }

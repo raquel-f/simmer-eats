@@ -1,7 +1,9 @@
 import Image from "next/image";
-import { Typography } from "../utils/typography";
 import Link from "next/link";
-import { getBusiness, getImage } from "../api";
+
+// API & utils
+import { getBusiness, getImage } from "@/app/_api";
+import { Typography } from "@/app/_utils/typography";
 
 export default async function FoodItem({ _id, name, price, owner, image }) {
 

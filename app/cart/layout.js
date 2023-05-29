@@ -1,4 +1,4 @@
-import Navbar from "../components/navbar";
+import Navbar from "../_components/navbar";
 
 export default function CartLayout({ children }) {
     return (

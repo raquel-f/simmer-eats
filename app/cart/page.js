@@ -1,6 +1,10 @@
-import { Typography } from "../utils/typography";
 import Link from "next/link";
-import Cart from "./cart";
+
+// utils
+import { Typography } from "../_utils/typography";
+
+// components
+import Cart from "./_components/cart";
 
 export default async function CartPage() {
 

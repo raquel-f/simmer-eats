@@ -2,10 +2,12 @@
 'use client';
 
 import Image from "next/image";
-import { Typography } from "../utils/typography";
 import { useEffect, useState } from "react";
-import { getLoggedUser, updateLoggedUser } from "../api";
-import { getAuthCookie } from "../api/cookies";
+
+// API & utils
+import { getLoggedUser, updateLoggedUser } from "@/app/_api";
+import { getAuthCookie } from "@/app/_api/cookies";
+import { Typography } from "@/app/_utils/typography";
 
 export default function Profile() {
 
@@ -79,7 +81,8 @@ export default function Profile() {
         } catch (e) {
             // show error to user
             console.log(e);
-            setError(e.response.data.message);
+            if(e.response && e.response.data && e.response.data.message) setError(e.response.data.message);
+            else setError('An error occured. Please try again later.');
         }
     }
 

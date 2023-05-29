@@ -1,10 +1,12 @@
 // Client Component
 'use client';
 
-import Image from "next/image";
-import Category from "./category";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+// components
+import Category from "./category";
 
 export default function CategoryFilter({ categories }) {
 

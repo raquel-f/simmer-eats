@@ -1,10 +1,11 @@
 // Client Component
 'use client';
-
-import { addToLoggedCart } from "@/app/api";
-import { Typography } from "@/app/utils/typography";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+
+// API & utils
+import { addToLoggedCart } from "@/app/_api";
+import { Typography } from "@/app/_utils/typography";
 
 export default function AddToCart({ servings, price, foodID }) {
 

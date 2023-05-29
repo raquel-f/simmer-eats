@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Typography } from "../utils/typography";
+
+// utils
+import { Typography } from "@/app/_utils/typography";
 
 export default function HomeNav() {
     return (

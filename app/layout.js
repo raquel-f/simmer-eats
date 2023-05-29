@@ -2,8 +2,7 @@ import Head from 'next/head';
 import { Montserrat } from 'next/font/google';
 
 // components
-import Navbar from './components/navbar';
-import Footer from './components/footer';
+import Footer from './_components/footer';
 
 // style
 import './globals.css';

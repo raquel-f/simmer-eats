@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import { Typography } from './utils/typography';
+import { Typography } from './_utils/typography';
 
 // components
-import HomeNav from './components/homeNav';
-import Navbar from './components/navbar';
+import HomeNav from './_components/homeNav';
+import Navbar from './_components/navbar';
 
 export default function Home() {
 

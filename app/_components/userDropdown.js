@@ -1,11 +1,13 @@
 // Client Component
 'use client';
 
-import Image from "next/image";
-import { useRouter } from 'next/navigation';
 import { useState } from "react";
-import { deleteAuthCookie } from "../api/cookies";
+import { useRouter } from 'next/navigation';
+import Image from "next/image";
 import Link from "next/link";
+
+// API
+import { deleteAuthCookie } from "../_api/cookies";
 
 function logout(router, updateUser) {
 

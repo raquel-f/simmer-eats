@@ -1,12 +1,16 @@
 // Client Component
 'use client';
 
-import Link from "next/link";
-import { Typography } from "../utils/typography";
-import { getLoggedUser } from "../api";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+
+// API & utils
+import { getLoggedUser } from "@/app/_api";
+import { Typography } from "@/app/_utils/typography";
+import { getAuthCookie } from "@/app/_api/cookies";
+
+// components
 import UserDropdown from "./userDropdown";
-import { getAuthCookie } from "../api/cookies";
 
 export default function NavItems({ links }) {
 
@@ -16,10 +20,10 @@ export default function NavItems({ links }) {
     useEffect(() => {
         // if there is no cookie, return
         if (!getAuthCookie('jwt')) return;
-        
+
         getLoggedUser()
-            .then((res) => { setUser(res.data); console.log(res.data) })
-            .catch((error) => { console.log(error); setUser(null) });
+            .then((res) => { setUser(res.data); console.log(res.data); })
+            .catch((error) => { setUser(null); console.log(error); });
     }, []);
 
     return (

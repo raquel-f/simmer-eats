@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Typography } from "../utils/typography";
-import { getImage } from "../api";
+
+// API & utils
+import { getImage } from "@/app/_api";
+import { Typography } from "@/app/_utils/typography";
 
 export default async function Restaurant({ _id, name, description, image }) {
     

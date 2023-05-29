@@ -1,4 +1,5 @@
-import { Typography } from "@/app/utils/typography";
+// utils
+import { Typography } from "@/app/_utils/typography";
 
 export default function FoodNote({ note }) {
     return (

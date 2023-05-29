@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { Typography } from "../utils/typography";
-import Profile from "./profile";
+
+// utils
+import { Typography } from "@/app/_utils/typography";
+
+// components
+import Profile from "./_components/profile";
 
 export default function ProfilePage() {
     return (

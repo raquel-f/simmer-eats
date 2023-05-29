@@ -4,7 +4,7 @@
 import { useState } from "react";
 
 // hooks
-import { useScrollPosition } from "../hooks/scrollPosition";
+import { useScrollPosition } from "../_hooks/scrollPosition";
 
 // components
 import Branding from "./branding";

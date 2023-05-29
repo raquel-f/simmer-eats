@@ -1,9 +1,13 @@
-import { getFoodItem, getImage } from "@/app/api";
-import { Typography } from "@/app/utils/typography";
 import Image from "next/image";
 import Link from "next/link";
-import FoodNote from "./foodNote";
-import AddToCart from "./addToCart";
+
+// API & utils
+import { getFoodItem, getImage } from "@/app/_api";
+import { Typography } from "@/app/_utils/typography";
+
+// components
+import FoodNote from "./_components/foodNote";
+import AddToCart from "./_components/addToCart";
 
 export default async function FoodID({ params }) {
 
@@ -45,8 +49,8 @@ export default async function FoodID({ params }) {
 
                     {/* Food notes */}
                     <div className="flex items-start justify-start w-full mb-4">
-                        {foodData.data.notes && foodData.data.notes.map((note) =>
-                            <FoodNote note={note} />
+                        {foodData.data.notes && foodData.data.notes.map((note, index) =>
+                            <FoodNote note={note} key={index} />
                         )}
                     </div>
 
@@ -71,7 +75,7 @@ export default async function FoodID({ params }) {
                     </div>
 
                     {/* Purchase food form */}
-                    <AddToCart servings={servings} price={price} foodID={foodData.data._id}/>
+                    <AddToCart servings={servings} price={price} foodID={foodData.data._id} />
                 </div>
             </div>
         </div>
