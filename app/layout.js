@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Montserrat } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 // components
 import Footer from './_components/footer';
@@ -30,6 +31,9 @@ export default function RootLayout({ children }) {
 
         {/* Footer */}
         <Footer />
+
+        {/* Vercel Analytics */}
+        <Analytics />
       </body>
     </html>
   )
