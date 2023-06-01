@@ -20,9 +20,7 @@ export default function Loading() {
             {/* Loading Food Items */}
             <div className="py-8 px-6 pr-4 w-screen grid items-center justify-center gap-4 grid-cols-[repeat(auto-fill,minmax(200px,1fr))] auto-rows-auto">
                 {[...Array(nFood)].map((f, index) => {
-                    debugger;
                     return <LoadingFood key={index} />
-                    
                 })}
             </div>
         </>
