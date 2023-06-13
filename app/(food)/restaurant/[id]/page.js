@@ -38,7 +38,7 @@ export default async function RestaurantID({ params }) {
             <div className="flex flex-col md:flex-row">
 
                 {/* Restaurant Information */}
-                <div className="flex flex-col mt-4 h-fit w-full lg:w-max bg-white rounded-xl py-2 divide-y divide-gray-100 shadow  items-center">
+                <div className="flex flex-col mt-4 h-fit w-full lg:w-max bg-white rounded-xl py-2 divide-y divide-gray-100 shadow items-center">
                     {/* Restaurant image */}
                     <Image src={restImage} width={200} height={200} className="h-[200px] rounded-lg" alt="business image" />
 
