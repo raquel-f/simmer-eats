@@ -50,7 +50,7 @@ export default function Cart() {
 
     return (
         <>
-            {/* container for cart items */}
+            {/* Container for cart items */}
             <div className="grid grid-cols-1 gap-y-4 mb-6">
                 {cart.products.map((prod) => {
                     return <CartItem key={prod._id} {...prod} deleteItem={deleteItem} />
