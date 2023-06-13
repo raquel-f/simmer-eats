@@ -21,7 +21,7 @@ export default function Footer() {
                         {/* Resources */}
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-950 uppercase">Resources</h2>
-                            <ul className="text-gray-800 font-medium">
+                            <ul className="text-gray-800 font-medium w-36">
                                 <li className="mb-4">
                                     <Link href={"/"}>
                                         <Typography variant={"h6"} className={"hover:font-medium"}>Add your restaurant</Typography>
