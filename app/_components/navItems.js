@@ -15,16 +15,34 @@ import UserDropdown from "./userDropdown";
 export default function NavItems({ links }) {
 
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     // get authenticated user
     useEffect(() => {
         // if there is no cookie, return
-        if (!getAuthCookie('jwt')) return;
+        if (!getAuthCookie('jwt')) {
+            setLoading(false);
+            return;
+        };
 
         getLoggedUser()
-            .then((res) => { setUser(res.data); console.log(res.data); })
-            .catch((error) => { setUser(null); console.log(error); });
+            .then((res) => { setUser(res.data); setLoading(false); console.log(res.data); })
+            .catch((error) => { setUser(null); setLoading(false); console.log(error); });
     }, []);
+
+    // Elements displayed before fetching user
+    if (loading) return (
+        <>
+            {/* Common Navigation Items */}
+            {links.map((link, index) => (
+                <li key={index}>
+                    <Link href={link.href}>
+                        <Typography variant={"h5"} className={"py-2 pr-4 text-green-950 rounded bg-transparent md:p-0 hover:font-semibold"}>{link.text}</Typography>
+                    </Link>
+                </li>
+            ))}
+        </>
+    );
 
     return (
         <>
