@@ -42,3 +42,6 @@ export const getImage = (id) => API.get(`/image/${id}`);
 export const getBusinesses = () => API.get(`/business`);
 export const getBusiness = (id) => API.get(`/business/${id}`);
 
+// payment
+export const createCheckoutSession = (data) => API.post(`/stripe/createCheckout`, data);
+
