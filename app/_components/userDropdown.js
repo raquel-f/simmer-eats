@@ -60,7 +60,9 @@ export default function UserDropdown({ user, updateUser }) {
                         </Link>
                     </li>
                     <li>
-                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deliveries</a>
+                        <Link href={'/delivery'} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            Deliveries
+                        </Link>
                     </li>
                     <li>
                         <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:cursor-pointer" onClick={() => logout(router, updateUser)}>Sign out</a>
