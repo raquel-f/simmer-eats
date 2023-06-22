@@ -20,8 +20,8 @@ export default function DeliveryItem({ products, status, _id, lastUpdated }) {
 
     // format last update date
     const options = {
-        weekday: 'long', timeZoneName: 'shortOffset',
-        year: 'numeric', month: 'long', day: 'numeric',
+        timeZoneName: 'shortOffset',
+        year: 'numeric', month: 'numeric', day: 'numeric',
         hour: 'numeric', minute: 'numeric', second: 'numeric'
     };
     const locale = navigator.languages[0];
@@ -34,7 +34,7 @@ export default function DeliveryItem({ products, status, _id, lastUpdated }) {
 
             {/* Delivery Information */}
             <div className="flex items-center">
-                <Image src={'/delivery.png'} alt="delivery icon" width={100} height={100} className="hidden sm:block"/>
+                <Image src={'/delivery.png'} alt="delivery icon" width={100} height={100} className="hidden sm:block" />
                 <div className="flex flex-col ml-2 sm:ml-4">
                     <Typography variant={'h5'} className={'hidden sm:block'}>
                         Quantity: <span className="font-normal">{totalQuantity}</span>
