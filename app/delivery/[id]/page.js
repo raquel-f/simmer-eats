@@ -36,7 +36,6 @@ export default async function Page({ params }) {
                     <Typography variant={'h2'} className={'mb-4 ml-6'}>Order Contents</Typography>
                     <DeliveryContent id={params.id} />
                 </div>
-
             </div>
 
         </div>
