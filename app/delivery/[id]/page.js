@@ -5,6 +5,7 @@ import { Typography } from "@/app/_utils/typography";
 
 // components
 import Timeline from "./_components/timeline";
+import DeliveryContent from "./_components/deliveryContent";
 
 
 export default async function Page({ params }) {
@@ -25,7 +26,11 @@ export default async function Page({ params }) {
             {/* Mobile/Portrait View */}
 
             {/* Landscape view */}
-            <Timeline id={params.id} />
+            <div className="hidden md:flex items-start justify-start">
+                <Timeline id={params.id} />
+                <DeliveryContent id={params.id} />
+            </div>
+
 
         </div>
 

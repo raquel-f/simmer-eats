@@ -63,106 +63,93 @@ export default function Timeline({ id }) {
     return (
         <>
             {!loading &&
-                <div className="hidden md:flex items-start justify-start">
+                /* Timeline */
+                <div className="p-4">
+                    <div className="container">
+                        <div className="flex flex-col md:grid grid-cols-12 text-gray-50">
 
-                    {/* Timeline */}
-                    <div className="p-4">
-                        <div className="container">
-                            <div className="flex flex-col md:grid grid-cols-12 text-gray-50">
+                            {/* Unavailable */}
+                            {progress === 0 && <TimelineItem
+                                bgColor={'bg-gray-300'}
+                                textColor={'text-gray-400'}
+                                title={'Information Unavailable'}
+                                desc={'Try again later.'}
+                            />}
 
-                                {/* Unavailable */}
-                                {progress === 0 && <TimelineItem
-                                    bgColor={'bg-gray-300'}
-                                    textColor={'text-gray-400'}
-                                    title={'Information Unavailable'}
-                                    desc={'Try again later.'}
-                                />}
+                            {/* Canceled */}
+                            {progress === -1 &&
+                                <>
+                                    {/* Processing */}
+                                    <TimelineItem
+                                        bgColor={'bg-green-500'}
+                                        textColor={'text-white'}
+                                        title={'Processed'}
+                                        desc={'Delivery was processed.'}
+                                    />
 
-                                {/* Canceled */}
-                                {progress === -1 &&
-                                    <>
-                                        {/* Processing */}
-                                        <TimelineItem
-                                            bgColor={'bg-green-500'}
-                                            textColor={'text-white'}
-                                            title={'Processed'}
-                                            desc={'Delivery was processed.'}
-                                        />
+                                    {/* Confirmed */}
+                                    <TimelineItem
+                                        bgColor={'bg-green-500'}
+                                        textColor={'text-white'}
+                                        title={'Order Confirmed'}
+                                        desc={'Payment has been received.'}
+                                    />
 
-                                        {/* Confirmed */}
-                                        <TimelineItem
-                                            bgColor={'bg-green-500'}
-                                            textColor={'text-white'}
-                                            title={'Order Confirmed'}
-                                            desc={'Payment has been received.'}
-                                        />
+                                    <TimelineItem
+                                        bgColor={'bg-red-500'}
+                                        textColor={'text-white'}
+                                        title={'Canceled'}
+                                        desc={'This delivery was canceled per customer request.'}
+                                    />
+                                </>
+                            }
 
-                                        <TimelineItem
-                                            bgColor={'bg-red-500'}
-                                            textColor={'text-white'}
-                                            title={'Canceled'}
-                                            desc={'This delivery was canceled per customer request.'}
-                                        />
-                                    </>
-                                }
+                            {/* Available Info and Not canceled */}
+                            {progress > 0 &&
+                                <>
+                                    {/* Processing */}
+                                    <TimelineItem
+                                        bgColor={progress === 1 ? 'bg-orange-400' : 'bg-green-500'}
+                                        textColor={'text-white'}
+                                        title={progress === 1 ? 'Processing' : 'Processed'}
+                                        desc={progress === 1 ? 'Delivery is being processed.' : 'Delivery was processed.'}
+                                    />
 
-                                {/* Available Info and Not canceled */}
-                                {progress > 0 &&
-                                    <>
-                                        {/* Processing */}
-                                        <TimelineItem
-                                            bgColor={progress === 1 ? 'bg-orange-400' : 'bg-green-500'}
-                                            textColor={'text-white'}
-                                            title={progress === 1 ? 'Processing' : 'Processed'}
-                                            desc={progress === 1 ? 'Delivery is being processed.' : 'Delivery was processed.'}
-                                        />
+                                    {/* Confirmed */}
+                                    <TimelineItem
+                                        bgColor={progress > 1 ? 'bg-green-500' : 'bg-gray-300'}
+                                        textColor={progress > 1 ? 'text-white' : 'text-gray-400'}
+                                        title={progress > 1 ? 'Order Confirmed' : 'Confirmation'}
+                                        desc={progress > 1 ? 'Payment has been received.' : null}
+                                    />
 
-                                        {/* Confirmed */}
-                                        <TimelineItem
-                                            bgColor={progress > 1 ? 'bg-green-500' : 'bg-gray-300'}
-                                            textColor={progress > 1 ? 'text-white' : 'text-gray-400'}
-                                            title={progress > 1 ? 'Order Confirmed' : 'Confirmation'}
-                                            desc={progress > 1 ? 'Payment has been received.' : null}
-                                        />
+                                    {/* Shipped */}
+                                    <TimelineItem
+                                        bgColor={progress > 2 ? 'bg-green-500' : 'bg-gray-300'}
+                                        textColor={progress > 2 ? 'text-white' : 'text-gray-400'}
+                                        title={progress > 2 ? 'Order Shipped' : 'Shipping'}
+                                        desc={progress > 2 ? 'Delivery has been shipped from the restaurant(s).' : null}
+                                    />
 
-                                        {/* Shipped */}
-                                        <TimelineItem
-                                            bgColor={progress > 2 ? 'bg-green-500' : 'bg-gray-300'}
-                                            textColor={progress > 2 ? 'text-white' : 'text-gray-400'}
-                                            title={progress > 2 ? 'Order Shipped' : 'Shipping'}
-                                            desc={progress > 2 ? 'Delivery has been shipped from the restaurant(s).' : null}
-                                        />
+                                    {/* In Transit */}
+                                    <TimelineItem
+                                        bgColor={progress > 3 ? 'bg-green-500' : 'bg-gray-300'}
+                                        textColor={progress > 3 ? 'text-white' : 'text-gray-400'}
+                                        title={progress > 3 ? 'Order In Transit' : 'Transit'}
+                                        desc={progress > 3 ? 'Delivery is on its way. Hang tight!' : null}
+                                    />
 
-                                        {/* In Transit */}
-                                        <TimelineItem
-                                            bgColor={progress > 3 ? 'bg-green-500' : 'bg-gray-300'}
-                                            textColor={progress > 3 ? 'text-white' : 'text-gray-400'}
-                                            title={progress > 3 ? 'Order In Transit' : 'Transit'}
-                                            desc={progress > 3 ? 'Delivery is on its way. Hang tight!' : null}
-                                        />
-
-                                        {/* Complete */}
-                                        <TimelineItem
-                                            bgColor={progress > 4 ? 'bg-green-500' : 'bg-gray-300'}
-                                            textColor={progress > 4 ? 'text-white' : 'text-gray-400'}
-                                            title={'Order Complete'}
-                                            desc={progress > 4 ? 'Delivery has reached its destination. Shpansa!' : null}
-                                        />
-                                    </>
-                                }
-                            </div>
+                                    {/* Complete */}
+                                    <TimelineItem
+                                        bgColor={progress > 4 ? 'bg-green-500' : 'bg-gray-300'}
+                                        textColor={progress > 4 ? 'text-white' : 'text-gray-400'}
+                                        title={'Order Complete'}
+                                        desc={progress > 4 ? 'Delivery has reached its destination. Shpansa!' : null}
+                                    />
+                                </>
+                            }
                         </div>
                     </div>
-
-                    {/* Contents */}
-                    <div className="ml-4 grow">
-                        <Typography variant={'h2'} className={'mb-4'}>Order Contents</Typography>
-
-                        {delivery.products.map((prod => {
-                            return <DeliveryProduct key={prod._id} {...prod} />
-                        }))}
-                    </div>
-
                 </div>
             }
         </>
