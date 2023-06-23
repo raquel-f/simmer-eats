@@ -6,11 +6,9 @@ import { useEffect, useState } from "react";
 // API & utils
 import { getDelivery } from "@/app/_api";
 import { getAuthCookie } from "@/app/_api/cookies";
-import { Typography } from "@/app/_utils/typography";
 
 // components
 import TimelineItem from "./timelineItem";
-import DeliveryProduct from "./deliveryProduct";
 
 export default function Timeline({ id }) {
 

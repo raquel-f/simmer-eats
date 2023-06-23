@@ -31,8 +31,7 @@ export default function DeliveryContent({ id }) {
         <>
             {/* Contents */}
             {!loading &&
-                <div div className="ml-4 grow">
-                    <Typography variant={'h2'} className={'mb-4 ml-6'}>Order Contents</Typography>
+                <div className="md:ml-4">
                     {delivery.products.map((prod => {
                         return <DeliveryProduct key={prod._id} {...prod} />
                     }))}

@@ -6,6 +6,7 @@ import { Typography } from "@/app/_utils/typography";
 // components
 import Timeline from "./_components/timeline";
 import DeliveryContent from "./_components/deliveryContent";
+import Tabs from "./_components/tabs";
 
 
 export default async function Page({ params }) {
@@ -24,15 +25,20 @@ export default async function Page({ params }) {
             </div>
 
             {/* Mobile/Portrait View */}
+            <div className="md:hidden">
+                <Tabs id={params.id} />
+            </div>
 
             {/* Landscape view */}
             <div className="hidden md:flex items-start justify-start">
                 <Timeline id={params.id} />
-                <DeliveryContent id={params.id} />
+                <div className="grow">
+                    <Typography variant={'h2'} className={'mb-4 ml-6'}>Order Contents</Typography>
+                    <DeliveryContent id={params.id} />
+                </div>
+
             </div>
 
-
         </div>
-
     );
 }
