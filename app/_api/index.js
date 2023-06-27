@@ -45,3 +45,7 @@ export const getBusiness = (id) => API.get(`/business/${id}`);
 // payment
 export const createCheckoutSession = (data) => API.post(`/stripe/createCheckout`, data);
 
+// deliveries
+export const getLoggedDeliveries = () => API.get(`/delivery/me`);
+export const getDelivery = (id) => API.get(`/delivery/${id}`);
+
