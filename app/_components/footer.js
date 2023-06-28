@@ -28,7 +28,7 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>
+                                    <Link href={"/about"}>
                                         <Typography variant={"h6"} className={"hover:font-medium"}>About Simmer Eats</Typography>
                                     </Link>
                                 </li>
@@ -39,12 +39,12 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-950 uppercase">Legal</h2>
                             <ul className="text-gray-800 font-medium">
                                 <li className="mb-4">
-                                    <Link href={"/"}>
+                                    <Link href={"/privacy"}>
                                         <Typography variant={"h6"} className={"hover:font-medium"}>Privacy Policy</Typography>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href={"/"}>
+                                    <Link href={"/terms"}>
                                         <Typography variant={"h6"} className={"hover:font-medium"}>Terms &amp; Conditions</Typography>
                                     </Link>
                                 </li>

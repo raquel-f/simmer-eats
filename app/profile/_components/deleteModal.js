@@ -39,7 +39,7 @@ export default function DeleteModal({ display, setDisplay }) {
             {display &&
                 <div id="popup-modal" className="fixed top-0 left-0 right-0 z-50 p-4 overflow-x-hidden overflow-y-auto w-full h-full bg-gray-700 bg-opacity-50" onClick={() => setDisplay(false)}>
                     <div className="relative w-full h-full">
-                        <div className="relative bg-white rounded-lg shadow top-1/3 left-1/3 w-max h-max p-4">
+                        <div className="relative bg-white rounded-lg shadow w-full h-max top-1/3 md:-right-1/3 md:w-max  p-4">
                             
                             {/* Close button */}
                             <button type="button" onClick={() => setDisplay(false)} className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
