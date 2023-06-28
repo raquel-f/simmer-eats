@@ -36,8 +36,8 @@ export default function AddToCart({ servings, price, foodID }) {
             // get response from API
             const status = response.status;
 
-            // food added to cart, redirect to food page
-            if (status == 200) router.push('/food');
+            // food added to cart, redirect to cart page
+            if (status == 200) router.push('/cart');
         } catch (e) {
             // show error to user
             console.log(e);
