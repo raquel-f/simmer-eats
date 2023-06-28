@@ -17,6 +17,7 @@ export const loginUser = (data) => API.post(`/user/signin`, data);
 export const registerUser = (data) => API.post(`/user/signup`, data);
 export const getLoggedUser = () => API.get(`/user/me`);
 export const updateLoggedUser = (data) => API.patch(`/user/me`, data);
+export const deleteLoggedUser = () => API.delete(`/user/me`);
 
 // food
 export const getFood = () => API.get(`/food`);

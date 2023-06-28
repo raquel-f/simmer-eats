@@ -9,6 +9,9 @@ import { getLoggedUser, updateLoggedUser } from "@/app/_api";
 import { getAuthCookie } from "@/app/_api/cookies";
 import { Typography } from "@/app/_utils/typography";
 
+// components
+import DeleteModal from "./deleteModal";
+
 export default function Profile() {
 
     // form states
@@ -19,8 +22,8 @@ export default function Profile() {
     const [confPassword, setConfPassword] = useState(null);
     const [image, setImage] = useState('/android-chrome-192x192.png');
 
-    // authenticated user's information
-    const [user, setUser] = useState(null);
+    // delete modal display
+    const [showModal, setModal] = useState(false);
 
     // get authenticated user
     useEffect(() => {
@@ -30,14 +33,12 @@ export default function Profile() {
         getLoggedUser()
             .then((res) => {
                 console.log(res.data);
-                // user information
-                setUser(res.data);
 
                 // form information
                 setName(res.data.name);
                 setImage(res.data.image);
             })
-            .catch((error) => { console.log(error); setUser(null) });
+            .catch((error) => { console.log(error) });
     }, []);
 
     // update user information
@@ -81,7 +82,7 @@ export default function Profile() {
         } catch (e) {
             // show error to user
             console.log(e);
-            if(e.response && e.response.data && e.response.data.message) setError(e.response.data.message);
+            if (e.response && e.response.data && e.response.data.message) setError(e.response.data.message);
             else setError('An error occured. Please try again later.');
         }
     }
@@ -89,6 +90,8 @@ export default function Profile() {
 
     return (
         <div className="flex flex-col items-center justify-around pt-4 mb-4 lg:flex-row lg:justify-around lg:items-start">
+
+            <DeleteModal display={showModal} setDisplay={setModal} />
 
             {/* Possible profile images available */}
             <div className="mb-10 lg:pl-6 lg:mb-0">
@@ -159,6 +162,9 @@ export default function Profile() {
                     {/* Update Button */}
                     <button type="submit" className="w-full text-green-950 hover:text-white border-2 border-green-600 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center ease-out duration-300">Update Information</button>
                 </form>
+
+                {/* Delete Account Button */}
+                <button type="button" onClick={() => setModal(true)} className="w-full mt-4 text-white border-2 bg-red-800 border-red-800 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center ease-out duration-300">Delete Account</button>
             </div >
 
         </div >
