@@ -1,10 +1,12 @@
 // Client Component
 'use client';
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 // API & utils
-import { addToLoggedCart } from "@/app/_api";
+import { addToLoggedCart, getLoggedUser } from "@/app/_api";
+import { getAuthCookie } from "@/app/_api/cookies";
 import { Typography } from "@/app/_utils/typography";
 
 export default function AddToCart({ servings, price, foodID }) {
@@ -20,6 +22,12 @@ export default function AddToCart({ servings, price, foodID }) {
     const addToOrder = async (event) => {
         // prevent page refresh
         event.preventDefault();
+
+        // if there is no cookie, redirect to login
+        if (!getAuthCookie('jwt')) router.push('/auth/signIn');
+
+        // if JWT is not valid, redirect to login
+        try { await getLoggedUser(); } catch (e) { console.log(e); router.push('/auth/signIn'); }
 
         // product information
         const item = {
