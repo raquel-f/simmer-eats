@@ -1,22 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img alt="Simmer Eats" src="https://github.com/raquel-f/simmer-eats/blob/master/public/logo-v2.png?raw=true" width="700" /> 
+</p>
+<h1 align="center">
+  Simmer Eats
+</h1>
+<p align="center">
+  Order up some Sim-tastic cuisine and let the flavour take you on a virtual journey. </br> A web application to immerse yourself in the beloved Sims 4 world.
+</p>
+<p align="center">
+  <a href="https://therealsujitk-vercel-badge.vercel.app/?app=simmer-eats">
+    <img alt="Vercel Status" src="https://therealsujitk-vercel-badge.vercel.app/?app=simmer-eats" />
+  </a>
+</p>
 
-## Getting Started
+## 💻 Technology Stack
 
-First, run the development server:
+<div>
+  <img alt="Static Badge" src="https://img.shields.io/badge/JavaScript-0D1117?logo=javascript">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Prettier-0D1117?logo=prettier">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Next.js-0D1117?logo=nextdotjs">
+  <img alt="Static Badge" src="https://img.shields.io/badge/React-0D1117?logo=react">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Axios-0D1117?logo=axios">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Tailwind CSS-0D1117?logo=tailwindcss">
+  <img alt="Static Badge" src="https://img.shields.io/badge/cookies--next-0D1117?logo=npm">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Vercel-0D1117?logo=vercel">
+
+</div>
+
+
+
+## 🚀 Quick start
+
+1.  **Local Development Mode**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# clone the repository
+git clone https://github.com/raquel-f/simmer-eats.git
+
+# install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Setup Environment Variables**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+# API URL for backend communication
+NEXT_PUBLIC_API_URL=...
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Stripe Key for payment integration
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=...
+
+# Stripe Secret Key for payment integration
+STRIPE_SECRET_KEY=...
+```
+
+3. **Run the project**
+
+```bash
+# run the project
+npm run dev
+```
+
+4.  **Open the website**
+
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+5.  **Open the source source**
+
+    The page auto-updates as you edit the files. Don't forget to save the changes!
+
+## 🧐 What's inside?
+
+A quick look at the top-level files and directories you'll see in a Next.js 13.4 project.
+
+    .
+    ├── .next
+    ├── app
+    ├── node_modules
+    ├── public
+    ├── .env.local
+    ├── .gitignore
+    ├── jsconfig.json
+    ├── middleware.js
+    ├── next.config.js
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── README.md
+    └── tailwind.config.js
 
 ## Learn More
 
