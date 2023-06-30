@@ -17,7 +17,6 @@ export default function DeliveryProduct({ product, quantity, serving, totalPrice
     useEffect(() => {
         getFoodItem(product)
             .then((res) => {
-                console.log(res.data);
                 setName(res.data.name);
 
                 // get food image

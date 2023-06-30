@@ -50,7 +50,7 @@ async function createAccount(event, errorH, router) {
         }
     } catch (e) {
         // show error to user
-        console.log(e);
+        //console.log(e);
         if (e.response && e.response.data && e.response.data.message) errorH(e.response.data.message);
         else errorH('An error occured. Please try again later.');
     }

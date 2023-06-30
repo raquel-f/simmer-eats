@@ -4,7 +4,7 @@
 // next & react
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // API & utils
 import { loginUser } from "@/app/_api";
@@ -44,7 +44,7 @@ async function login(event, errorH, router) {
         }
     } catch (e) {
         // show error to user
-        console.log(e);
+        //console.log(e);
         if (e.response && e.response.data && e.response.data.message) errorH(e.response.data.message);
         else errorH('An error occured. Please try again later.');
     }
@@ -57,6 +57,14 @@ export default function SignIn() {
 
     // navigation
     const router = useRouter();
+
+    // prevent hydration errors due to middleware redirection
+    const [hydrated, setHydrated] = useState(false);
+    useEffect(() => { setHydrated(true); }, []);
+
+    // Returns null on first render, so the client and server match
+    if (!hydrated) return null;
+
 
     return (
         <>

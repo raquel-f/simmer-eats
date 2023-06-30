@@ -12,7 +12,7 @@ export default async function RestaurantID({ params }) {
 
     // get business information
     const restData = await getBusiness(params.id);
-    console.log(restData.data);
+    //console.log(restData.data);
 
     // get business image from API
     const imageData = await getImage(restData.data.image);

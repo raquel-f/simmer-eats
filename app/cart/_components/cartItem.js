@@ -19,15 +19,12 @@ export default function CartItem({ product, quantity, serving, totalPrice, delet
             // food product information
             getFoodItem(product)
                 .then((res) => {
-                    console.log(res.data);
                     setName(res.data.name);
 
                     // get food image
                     getImage(res.data.image).then((res) => setImage(res.data.image));
                 })
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) { /* console.log(error); */ }
     }, []);
 
     return (

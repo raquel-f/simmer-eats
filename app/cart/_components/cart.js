@@ -24,8 +24,8 @@ export default function Cart() {
         if (!getAuthCookie('jwt')) return;
 
         getLoggedCart()
-            .then((res) => { console.log(res.data); setCart(res.data); setLoading(false); })
-            .catch((error) => { console.error(error); setLoading(false); });
+            .then((res) => { /* console.log(res.data); */ setCart(res.data); setLoading(false); })
+            .catch((error) => { /* console.error(error); */ setLoading(false); });
     }, []);
 
     // delete cart item
@@ -52,7 +52,6 @@ export default function Cart() {
     const checkout = async () => {
         createCheckoutSession(cart.products)
             .then((res) => {
-                console.log(res);
 
                 // get redirect url for payment and redirect user 
                 const url = res.data.redirect;

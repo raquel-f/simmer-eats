@@ -26,8 +26,8 @@ export default function NavItems({ links }) {
         };
 
         getLoggedUser()
-            .then((res) => { setUser(res.data); setLoading(false); console.log(res.data); })
-            .catch((error) => { setUser(null); setLoading(false); console.log(error); });
+            .then((res) => { setUser(res.data); setLoading(false); /* console.log(res.data); */ })
+            .catch((error) => { setUser(null); setLoading(false); /* console.log(error); */ });
     }, []);
 
     // Elements displayed before fetching user

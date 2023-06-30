@@ -38,7 +38,7 @@ export default function Profile() {
                 setName(res.data.name);
                 setImage(res.data.image);
             })
-            .catch((error) => { console.log(error) });
+            .catch((error) => { /* console.log(error) */ });
     }, []);
 
     // update user information
@@ -81,7 +81,7 @@ export default function Profile() {
             }
         } catch (e) {
             // show error to user
-            console.log(e);
+            //console.log(e);
             if (e.response && e.response.data && e.response.data.message) setError(e.response.data.message);
             else setError('An error occured. Please try again later.');
         }

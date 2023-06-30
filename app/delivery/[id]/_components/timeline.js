@@ -49,8 +49,8 @@ export default function Timeline({ id }) {
         if (!getAuthCookie('jwt')) return;
 
         getDelivery(id)
-            .then((res) => { console.log(res.data); setDelivery(res.data); })
-            .catch((error) => { console.error(error); })
+            .then((res) => { /* console.log(res.data); */ setDelivery(res.data); })
+            .catch((error) => { /* console.error(error); */ })
             .finally(() => setLoading(false));
     }, []);
 

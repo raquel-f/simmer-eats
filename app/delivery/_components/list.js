@@ -25,7 +25,6 @@ export default function List() {
 
         getLoggedDeliveries()
             .then((res) => {
-                console.log(res.data);
                 // inverse order in database so newest are first
                 let data = res.data.reverse();
                 setDeliveries(data);

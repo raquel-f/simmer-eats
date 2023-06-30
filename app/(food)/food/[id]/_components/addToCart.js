@@ -24,10 +24,10 @@ export default function AddToCart({ servings, price, foodID }) {
         event.preventDefault();
 
         // if there is no cookie, redirect to login
-        if (!getAuthCookie('jwt')) router.push('/auth/signIn');
+        if (!getAuthCookie('jwt')) { router.push('/auth/signIn'); return; }
 
         // if JWT is not valid, redirect to login
-        try { await getLoggedUser(); } catch (e) { console.log(e); router.push('/auth/signIn'); }
+        try { await getLoggedUser(); } catch (e) { /* console.log(e); */ router.push('/auth/signIn'); return; }
 
         // product information
         const item = {
@@ -46,10 +46,7 @@ export default function AddToCart({ servings, price, foodID }) {
 
             // food added to cart, redirect to cart page
             if (status == 200) router.push('/cart');
-        } catch (e) {
-            // show error to user
-            console.log(e);
-        }
+        } catch (e) { /* console.log(e); */ }
     }
 
     return (

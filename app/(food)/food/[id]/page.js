@@ -13,7 +13,7 @@ export default async function FoodID({ params }) {
 
     // get food item
     const foodData = await getFoodItem(params.id);
-    console.log(foodData.data);
+    //console.log(foodData.data);
 
     // get food image from API
     const imageData = await getImage(foodData.data.image);
@@ -38,7 +38,7 @@ export default async function FoodID({ params }) {
             {/* Food information */}
             <div className="p-2 flex flex-col items-center justify-center md:flex-row md:justify-around">
                 {/* Food image */}
-                <Image src={foodImage} width={300} height={300} className="mb-4" alt="food image" />
+                <Image src={foodImage} width={300} height={300} className="mb-4 h-auto" alt="food image" />
 
                 <div>
                     {/* Food name & min price */}
